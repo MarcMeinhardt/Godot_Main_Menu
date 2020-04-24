@@ -1,0 +1,180 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://title_screen/buttons/MultiplayerButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://title_screen/buttons/SettingsButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/fade_in.tscn" type="PackedScene" id=3]
+[ext_resource path="res://title_screen/buttons/LogoButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://title_screen/buttons/SinglePlayerButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://title_screen/insert_image.png" type="Texture" id=6]
+[ext_resource path="res://scenes/game/title-screen.gd" type="Script" id=7]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.03809
+margin_bottom = 1.03809
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UIMarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "// adds 4pts to all custom margins"
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIMarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 1076.0
+margin_bottom = 716.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UiTopMarginContainer2" type="MarginContainer" parent="UIMarginContainer/VBoxContainer"]
+margin_right = 1072.0
+margin_bottom = 92.0
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+__meta__ = {
+"_editor_description_": "// adds 12 pts to LTR custom margins"
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UIMarginContainer/VBoxContainer/UiTopMarginContainer2"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 1060.0
+margin_bottom = 92.0
+
+[node name="Logo" parent="UIMarginContainer/VBoxContainer/UiTopMarginContainer2/HBoxContainer2" instance=ExtResource( 4 )]
+margin_right = 360.0
+margin_bottom = 80.0
+
+[node name="UiHighMidMarginContainer" type="MarginContainer" parent="UIMarginContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 1072.0
+margin_bottom = 418.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 38.08
+__meta__ = {
+"_editor_description_": "// is a blank space for now"
+}
+
+[node name="UiLowMidMarginContainer3" type="MarginContainer" parent="UIMarginContainer/VBoxContainer"]
+margin_top = 422.0
+margin_right = 1072.0
+margin_bottom = 694.0
+custom_constants/margin_right = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 28
+__meta__ = {
+"_editor_description_": "// adds 12-12-16 to LRB custom margins"
+}
+
+[node name="MenuButtonsContainer" type="MarginContainer" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3"]
+margin_left = 12.0
+margin_right = 1060.0
+margin_bottom = 244.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 38.08
+
+[node name="CenterRow" type="HBoxContainer" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer"]
+margin_right = 1048.0
+margin_bottom = 244.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow"]
+margin_right = 522.0
+margin_bottom = 244.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+alignment = 2
+
+[node name="SinglePlayerButton" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow/Buttons" instance=ExtResource( 5 )]
+margin_top = 32.0
+margin_right = 522.0
+margin_bottom = 92.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MultiplayerButton" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 108.0
+margin_right = 522.0
+margin_bottom = 168.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="SettingsButton" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_top = 184.0
+margin_right = 522.0
+margin_bottom = 244.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow"]
+margin_left = 526.0
+margin_right = 1048.0
+margin_bottom = 244.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow/HBoxContainer"]
+margin_right = 198.0
+margin_bottom = 244.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow/HBoxContainer"]
+margin_left = 202.0
+margin_right = 522.0
+margin_bottom = 244.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow/HBoxContainer/VBoxContainer"]
+margin_right = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="UIMarginContainer/VBoxContainer/UiLowMidMarginContainer3/MenuButtonsContainer/CenterRow/HBoxContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 320.0
+margin_bottom = 244.0
+texture = ExtResource( 6 )
+
+[node name="UiBottomHBoxContainer" type="HBoxContainer" parent="UIMarginContainer/VBoxContainer"]
+margin_top = 698.0
+margin_right = 1072.0
+margin_bottom = 712.0
+
+[node name="VersionLabel" type="Label" parent="UIMarginContainer/VBoxContainer/UiBottomHBoxContainer"]
+margin_right = 534.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "version 0.0.1 "
+
+[node name="VersionLabel2" type="Label" parent="UIMarginContainer/VBoxContainer/UiBottomHBoxContainer"]
+margin_left = 538.0
+margin_right = 1072.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Marc Meinhardt 2020 "
+align = 2
+
+[node name="FadeIn" parent="." instance=ExtResource( 3 )]
+visible = false
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
