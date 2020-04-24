@@ -1,2 +1,2 @@
-# Game_MainMenu_Template
-// this is a main menu template using the awesome OSS Godot game engine
+# Godot_MainMenu_Interface
+// this is a main menu template projectusing the awesome OSS Godot game engine
